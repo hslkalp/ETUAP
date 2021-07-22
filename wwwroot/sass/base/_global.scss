@@ -1,0 +1,16 @@
+body {
+	font-size: 1rem;
+	color: var(--color-blue);
+	font-family: var(--default-font);
+}
+
+// * Svg icon css
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}

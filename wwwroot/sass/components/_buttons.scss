@@ -1,0 +1,9 @@
+.btn {
+	@include button(0px, 0px, 16px, transparent, none, 0, transparent, black);
+}
+
+button.menu-btn {
+	@extend .btn;
+	font-size: 1.8rem;
+	color: var(--color-blue);
+}

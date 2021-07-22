@@ -1,0 +1,87 @@
+header {
+	background-color: var(--bg--color-white);
+}
+.header-wrapper {
+	@include wrapper(1400px, 15px, 20px, 0px);
+	@include flex-container(row, nowrap, space-between, center, normal);
+	@include breakpoint('desktop') {
+		padding: 36px 0px;
+	}
+}
+
+.logo {
+	@include flex-container(row, nowrap, center, center, normal);
+}
+a.logo-img {
+	font-size: 1.8rem;
+	margin-right: 18px;
+	svg {
+		font-size: inherit;
+		fill: #002a6c;
+	}
+}
+
+a.logo-text {
+	p.ap-name {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 6px;
+	}
+	p.ap-title {
+		font-size: 15px;
+	}
+}
+
+// * Menu Btn
+
+button.menu-btn {
+	position: relative;
+	z-index: 10;
+	@include breakpoint('desktop') {
+		display: none;
+	}
+}
+
+// * Menu
+
+nav.main-menu {
+	display: none;
+	background-color: var(--bg--color-white);
+	@include breakpoint('desktop') {
+		display: block;
+	}
+	&.menu-active {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 9;
+		min-height: 100vh;
+	}
+	ul {
+		@include flex-container(column, nowrap, center, center, normal);
+		margin-top: 75px;
+		@include breakpoint('desktop') {
+			margin-top: 0;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		li {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+				@include breakpoint('desktop') {
+					margin-bottom: 0;
+				}
+			}
+			a {
+				font-size: 13px;
+				padding: 8px 12px;
+				color: var(--color-blue);
+				text-transform: capitalize;
+			}
+		}
+	}
+}
